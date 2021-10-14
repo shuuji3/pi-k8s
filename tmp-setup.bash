@@ -17,8 +17,8 @@ sudo chown -R root:docker /var/run/docker
 
 # Install arkade
 curl -sLS https://get.arkade.dev | sudo sh
-echo 'export PATH=$PATH:$HOME/.arkade/bin/' >> .bashrc
-. .bashrc
+echo 'export PATH=$PATH:$HOME/.arkade/bin/' >> ~/.bashrc
+. ~/.bashrc
 
 # Install
 ark get gh kind kubectl jq yq argocd-autopilot kubescape kubens kubectx k3sup minikube
