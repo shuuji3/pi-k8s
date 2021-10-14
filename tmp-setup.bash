@@ -3,6 +3,7 @@
 # Temporary note required to setup the cluster
 
 ssh-import-id gh:shuuji3
+ssh-keygen -t ed25519
 
 sudo hostnamectl set-hostname pi-0
 
