@@ -21,8 +21,7 @@ echo 'export PATH=$PATH:$HOME/.arkade/bin/' >> ~/.bashrc
 . ~/.bashrc
 
 # Install
-ark get gh kind kubectl jq yq argocd-autopilot kubescape kubens kubectx k3sup minikube
-
+ark get gh kind kubectl jq yq argocd-autopilot kubescape kubens kubectx k3sup minikube k9s linkerd2
 # Following tools could not be installed for unknown reasons...
 # x 404 krew
 # x 403 terraform vagrant
