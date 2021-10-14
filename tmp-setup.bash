@@ -27,3 +27,8 @@ ark get gh kind kubectl jq yq argocd-autopilot kubescape kubens kubectx k3sup mi
 # x 403 terraform vagrant
 
 gh auth login
+
+# Setup the Kubernetes cluster
+k3sup install --ssh-key ~/.ssh/id_ed25519 --local
+echo 'export KUBECONFIG=/home/ubuntu/kubeconfig' >> ~/.bashrc
+. ~/.bashrc
