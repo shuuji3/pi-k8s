@@ -31,3 +31,16 @@ patches:
       - op: replace
         path: /spec/template/spec/containers/0/image
         value: ghcr.io/jr64/argocd-applicationset:v0.4.0
+
+  # Temporary fix to run argocd-server with `--insecure` option
+  # ref. Cannot boostrap after uninstall · Issue #203 · argoproj-labs/argocd-autopilot
+  # - https://github.com/argoproj-labs/argocd-autopilot/issues/203
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: argocd-server
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/command/-
+        value: --insecure
