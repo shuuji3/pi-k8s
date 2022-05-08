@@ -1,0 +1,10 @@
+{
+  "appName": "hello-world",
+  "userGivenName": "hello-world",
+  "destNamespace": "default",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "argocd-autopilot/apps/hello-world/overlays/testing",
+  "srcRepoURL": "https://github.com/shuuji3/pi-k8s.git",
+  "srcTargetRevision": "",
+  "labels": null
+}
