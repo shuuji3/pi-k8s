@@ -1,0 +1,21 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: argocd
+  name: argocd-server
+spec:
+  rules:
+  - host: argocd.pi-k8s.shuuji3.xyz
+    http:
+      paths:
+      - backend:
+          service:
+            name: argocd-server
+            port:
+              number: 80
+        path: /
+        pathType: Prefix
+  tls:
+  - hosts:
+    - argocd.pi-k8s.shuuji3.xyz
+    secretName: argocd-pi-k8s-shuuji3-xyz-tls
