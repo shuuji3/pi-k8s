@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: rss-bridge-pi-k8s-shuuji3-xyz-cert
+  namespace: rss-bridge
+spec:
+  secretName: rss-bridge-pi-k8s-shuuji3-xyz-tls
+  issuerRef:
+    name: letsencrypt-production
+    kind: ClusterIssuer
+  commonName: rss-bridge.pi-k8s.shuuji3.xyz
+  dnsNames:
+  - rss-bridge.pi-k8s.shuuji3.xyz

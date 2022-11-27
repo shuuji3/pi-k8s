@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: rss-bridge
+  name: rss-bridge
+  labels:
+    app: rss-bridge
+spec:
+  type: ClusterIP
+  selector:
+    app: rss-bridge
+  ports:
+    - name: http
+      port: 80
+      targetPort: 80

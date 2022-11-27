@@ -1,0 +1,32 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: rss-bridge
+  name: rss-bridge
+  labels:
+    app: rss-bridge
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rss-bridge
+  template:
+    metadata:
+      labels:
+        app: rss-bridge
+    spec:
+      containers:
+        - image: rssbridge/rss-bridge
+          name: rss-bridge
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - mountPath: /app/whitelist.txt
+              subPath: whitelist.txt
+              name: rss-bridge-configmap
+      restartPolicy: Always
+      volumes:
+        - name: rss-bridge-configmap
+          configMap:
+            name: rss-bridge-configmap
