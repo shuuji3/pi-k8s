@@ -5,7 +5,7 @@ metadata:
   name: rss-bridge
 spec:
   rules:
-  - host: rss-bridge.pi-k8s.shuuji3.xyz
+  - host: rss-bridge.shuuji3.xyz
     http:
       paths:
       - backend:
@@ -15,11 +15,3 @@ spec:
               number: 80
         path: /
         pathType: Prefix
-  tls:
-  - hosts:
-    - rss-bridge.pi-k8s.shuuji3.xyz
-    secretName: rss-bridge-pi-k8s-shuuji3-xyz-tls
-status:
-  loadBalancer:
-    ingress:
-    - ip: 192.168.11.200
