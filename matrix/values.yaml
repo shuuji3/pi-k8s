@@ -1,0 +1,15 @@
+---
+homeserver:
+  send_federation: yes
+  server_name: matrix.pi-k8s.shuuji3.xyz
+ingress:
+  enabled: yes
+  hosts:
+    - host: matrix.pi-k8s.shuuji3.xyz
+      paths: ['/']
+  tls:
+    - hosts:
+        - matrix.pi-k8s.shuuji3.xyz
+      secretName: matrix-pi-k8s-shuuji3-xyz-tls
+nodeSelector:
+  kubernetes.io/arch: amd64
