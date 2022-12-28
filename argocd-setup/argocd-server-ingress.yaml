@@ -5,10 +5,12 @@ metadata:
   name: argocd-server
 spec:
   rules:
-  - host: argocd.pi-k8s.shuuji3.xyz
+  - host: argocd.shuuji3.xyz
     http:
       paths:
-      - backend:
+      - pathType: Prefix
+        path: /
+        backend:
           service:
             name: argocd-server
             port:
