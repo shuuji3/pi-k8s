@@ -13,9 +13,3 @@ spec:
             name: argocd-server
             port:
               number: 80
-        path: /
-        pathType: Prefix
-  tls:
-  - hosts:
-    - argocd.pi-k8s.shuuji3.xyz
-    secretName: argocd-pi-k8s-shuuji3-xyz-tls
