@@ -44,3 +44,18 @@ patches:
       - op: add
         path: /spec/template/spec/containers/0/command/-
         value: --insecure
+
+  # Temporary fix to avoid runAsNonRoot constraint
+  # ref. pod argocd-applicationset-controller: CreateContainerConfigError (missing securityContext?) · Issue #8885 · argoproj/argo-cd
+  # - https://github.com/argoproj/argo-cd/issues/8885
+  - target:
+      group: apps
+      version: v1
+      kind: Deployment
+      name: argocd-applicationset-controller
+    patch: |-
+      - op: add
+        path: /spec/template/spec/containers/0/securityContext
+        value:
+          runAsNonRoot: true
+          runAsUser: 1000
