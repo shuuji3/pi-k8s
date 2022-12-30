@@ -1,0 +1,13 @@
+{
+  "appName": "takahe-argocd-test",
+  "userGivenName": "takahe-argocd-test",
+  "destNamespace": "default",
+  "destServer": "https://kubernetes.default.svc",
+  "srcPath": "takahe",
+  "srcRepoURL": "https://github.com/shuuji3/pi-k8s.git",
+  "srcTargetRevision": "",
+  "labels": null,
+  "annotations": null,
+  "exclude": "",
+  "include": ""
+}
