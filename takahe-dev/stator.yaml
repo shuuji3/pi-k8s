@@ -1,0 +1,34 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: takahe-dev
+  name: stator
+spec:
+  selector:
+    matchLabels:
+      run: stator
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: stator
+    spec:
+      containers:
+        - name: stator
+          image: jointakahe/takahe-dev:edge
+          imagePullPolicy: Always
+          args:
+            - python3
+            - manage.py
+            - runstator
+          envFrom:
+            - configMapRef:
+                name: takahe-config
+            - secretRef:
+                name: takahe-secret
+          resources:
+            requests:
+              memory: "512Mi"
+            limits:
+              memory: "1024Mi"
