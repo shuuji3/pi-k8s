@@ -20,7 +20,7 @@ spec:
             claimName: takahe-media-pvc
       containers:
         - name: webserver
-          image: jointakahe/takahe:latest
+          image: jointakahe/takahe-dev:edge
           args:
             - "gunicorn"
             - "takahe.wsgi:application"

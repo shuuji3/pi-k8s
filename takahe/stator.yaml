@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: stator
-          image: jointakahe/takahe:latest
+          image: jointakahe/takahe-dev:edge
           imagePullPolicy: Always
           args:
             - python3
