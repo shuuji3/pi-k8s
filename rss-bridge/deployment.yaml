@@ -17,7 +17,7 @@ spec:
         app: rss-bridge
     spec:
       containers:
-        - image: rssbridge/rss-bridge
+        - image: ghcr.io/rss-bridge/rss-bridge:2023-07-11
           name: rss-bridge
           ports:
             - containerPort: 80
