@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: atproto-pds
+  name: atproto-pds
+spec:
+  rules:
+  - host: pds.shuuji3.xyz
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: atproto-pds
+            port:
+              number: 3001

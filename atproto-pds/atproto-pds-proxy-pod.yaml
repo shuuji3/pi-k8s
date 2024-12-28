@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: atproto-pds
+  name: atproto-pds
+  labels:
+    app: atproto-pds
+spec:
+  hostNetwork: true
+  containers:
+  - name: tcp-proxy
+    image: alpine/socat
+    command: ["socat", "TCP4-LISTEN:3001,fork", "TCP4:localhost:3000"]
